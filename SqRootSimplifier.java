@@ -62,70 +62,7 @@ public class SqRootSimplifier {
     
     
     
-    
-    //2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97
-    //int switchNumber = 0;
-    /*
-    switch ( switchNumber ) {
-      case 2: 
-      case 3:
-      case 5:
-      case 7:
-      case 11:
-      case 13:
-      case 17:
-      case 19:
-      case 23:
-      case 29:
-      case 31:
-      case 37:
-      case 43:
-      case 47:
-      case 53:
-      case 59:
-      case 61:
-      case 67:
-      case 71:
-      case 73:
-      case 79:
-      case 83:
-      case 89:
-      case 97:
-      
-    } */
-    
-    /*
-    int counter2 = 0; //new counter declared
-    int occurence = 0;
-    
-    //---------------------------------------------------------------------------
-    
-    
-    //Finding out number of occurences for each factor
-    for(int i = 0; i <= counter; i++) {
-      counter2 = 0;
-      occurence = 0;
-      System.out.print(dividerArray[i] + ": ");
-      
-      
-      for(int j = 0; j <= counter; j++) {
-        System.out.print(dividerArray[j] + " ");
-        
-        //IMPORTANT: in counterArray:     Tens place = factor, ones place = times of occurence
-        if(dividerArray[i] == dividerArray[j]) { 
-          counterArray[counter2] = (dividerArray[i] * 10) + (occurence + 1);
-          occurence = occurence + 1;
-          
-        }
-      }
-      
-      System.out.println();
-      System.out.println("CounterArray: " + counterArray[counter2] + "\n");
-    }
-    
-    */
-    
-    
+   
     
     
     
