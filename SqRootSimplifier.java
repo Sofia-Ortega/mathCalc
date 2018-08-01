@@ -19,7 +19,7 @@ public class SqRootSimplifier {
     int factorResult2 = 10;
     int counter = 0;
     int[] dividerArray = new int[20];
-    int[][] counterArray = new int[50][20];
+    int[] counterArray = new int[50];
     
     
    
@@ -48,22 +48,24 @@ public class SqRootSimplifier {
     dividerArray[counter] = factorResult2;
     
     
-    int counter2 = 0;
+    System.out.println("\n");
     for( int i = 0; i <= counter; i++ ) {
       System.out.println("dividerArray[" + i + "]: " + dividerArray[i]);
-      counterArray[dividerArray[i]][0] = counterArray[dividerArray[i]][0] + 1;
-      System.out.println("counterArray[dividerArray[i]][0]: " + counterArray[dividerArray[i]][0]);
-      counter2 = counter2 + 1;
-      
+      counterArray[dividerArray[i]] = counterArray[dividerArray[i]] + 1;
+      System.out.println("counterArray[dividerArray[" + dividerArray[i] + "]]: " + counterArray[dividerArray[i]]);
+      System.out.println();
     }
-    
    
-    
-    
-    
-    
-   
-    
+    System.out.println("\n");
+    int counterInt  = 0;
+    for( int i = 0; i <= counterInt; i++ ) {
+      counterInt = counterArray[dividerArray[i]];
+      if (counterInt >= 2) {
+        System.out.println("counterInt: " + counterInt);
+        System.out.println("outside sq root: " + (counterInt/2));
+        
+      }
+    }
     
     
     
