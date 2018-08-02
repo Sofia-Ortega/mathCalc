@@ -1,4 +1,4 @@
- import java.util.Scanner;
+ import java.util.*;
 
 
 public class SqRootSimplifier {
@@ -48,24 +48,71 @@ public class SqRootSimplifier {
     dividerArray[counter] = factorResult2;
     
     
-    System.out.println("\n");
-    for( int i = 0; i <= counter; i++ ) {
-      System.out.println("dividerArray[" + i + "]: " + dividerArray[i]);
-      counterArray[dividerArray[i]] = counterArray[dividerArray[i]] + 1;
-      System.out.println("counterArray[dividerArray[" + dividerArray[i] + "]]: " + counterArray[dividerArray[i]]);
-      System.out.println();
-    }
+    //-----------------------------------------------------------------------
+    
+    //gets freqency of factors
+    int numElem = counter + 1;
+    System.out.println("numElem: " + numElem);
+    int[] intArray = new int[numElem];
+    int[] iArray = new int[numElem];
+
+    
+
+    //sorts least to greatest
+    //Arrays.sort(dividerArray);
+
+    //gets freqency of each num in array using GetFreq method
+    for (int i = 0; i < numElem; i++) {
+    int aNum = dividerArray[i];
+    intArray[i] = GetFrequencyOfNum(dividerArray, numElem, aNum);
    
-    System.out.println("\n");
-    int counterInt  = 0;
-    for( int i = 0; i <= counterInt; i++ ) {
-      counterInt = counterArray[dividerArray[i]];
-      if (counterInt >= 2) {
-        System.out.println("counterInt: " + counterInt);
-        System.out.println("outside sq root: " + (counterInt/2));
+    }
+
+    
+    //prints out (not necessary)
+    int prevNum = 0;
+    int icounter = 0;
+    
+    for (int i = 0; i < numElem; i++) {
+      if(!(prevNum == dividerArray[i])) {
+        System.out.print(dividerArray[i] + " -- ");
+        System.out.println(intArray[i] + "\ti: " + i);
+        
+        //i stored in Array (necessary)
+        iArray[icounter] = i;
+        icounter = icounter + 1;
+      }
+      prevNum = dividerArray[i];
+    }
+    
+    System.out.println();
+    
+
+    int currNum = 0;
+    int freqNum = 0;
+    int currNumTotal = 0;
+    int theOutside = 1;
+    for (int i = 0; i < icounter; i++) {
+      
+      currNum = dividerArray[iArray[i]];
+      freqNum = intArray[iArray[i]];
+      System.out.println("currNum: " + currNum + " " + "freqNum: " + freqNum);
+        
+      if(freqNum > 1) {
+        freqNum = (freqNum / 2);
+        System.out.println(freqNum);
+        currNumTotal = currNumTotal + currNum;
+        theOutside = theOutside * currNum;
+        
         
       }
+      
+       
     }
+    
+    System.out.println("theOutside: " + theOutside);
+    
+    
     
     
     
@@ -118,6 +165,19 @@ public class SqRootSimplifier {
     return returnFactor;
     
     
+  }
+  
+  //---------------------------GET FREQ OF NUM---------------------------------
+
+public static int GetFrequencyOfNum(int[] numList, int listSize, int currNum) {
+  int counter = 0;
+    for( int i = 0; i < listSize; i++) {
+      if(numList[i] == (currNum)){
+        counter = counter + 1;
+      }
+    }
+
+  return counter;
   }
   
 
