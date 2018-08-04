@@ -46,10 +46,22 @@ public class Calculations {
   public static void SqRootSimplifier() {
     
     System.out.println("Enter Square Root Number : ");
-    int userNum = CONSOLE.nextInt();
+    
+    //Controlling userInput
+    while( !CONSOLE.hasNextInt() ) {
+      CONSOLE.next();
+      System.out.println( "Enter a counting number: ");
+    }
+    boolean neg = false;
+    int userNum =CONSOLE.nextInt();
+    if(userNum < 0 ) {
+      neg = true;
+      userNum = Math.abs(userNum);
+    }
+    
     int origUserNum = userNum;
 
-    
+    //so it begins (variables declared)
     int dividerResult = 10;
     int factorResult = 10;
     int factorResult2 = 10;
@@ -87,7 +99,7 @@ public class Calculations {
     
     //gets freqency of factors
     int numElem = counter + 1;
-    System.out.println("numElem: " + numElem);
+    //System.out.println("numElem: " + numElem);
     int[] intArray = new int[numElem];
     int[] iArray = new int[numElem];
 
@@ -151,7 +163,15 @@ public class Calculations {
     //System.out.println("theInside: " + theInside);
     
     //System.out.println("\n\n");
-    System.out.println(theOutside + " root " + theInside);
+
+    
+    if(!neg) {
+      System.out.print(theOutside + " root " + theInside);
+      System.out.println("(" + theOutside + " root " + theInside  + ")i");
+    }
+    else {
+      System.out.println("(" + theOutside + " root " + theInside  + ")i");
+    }
     
     
     
