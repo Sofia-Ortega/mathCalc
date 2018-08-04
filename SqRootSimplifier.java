@@ -19,7 +19,7 @@ public class SqRootSimplifier {
     int factorResult2 = 10;
     int counter = 0;
     int[] dividerArray = new int[20];
-    int[] counterArray = new int[50];
+    //int[] counterArray = new int[50];
     
     
    
@@ -90,8 +90,11 @@ public class SqRootSimplifier {
 
     int currNum = 0;
     int freqNum = 0;
+    int counter2 = 0;
     int currNumTotal = 0;
     int theOutside = 1;
+    //int theInside = 1;
+    
     for (int i = 0; i < icounter; i++) {
       
       currNum = dividerArray[iArray[i]];
@@ -99,10 +102,16 @@ public class SqRootSimplifier {
       System.out.println("currNum: " + currNum + " " + "freqNum: " + freqNum);
         
       if(freqNum > 1) {
+        //if(counter2 == 0) {
+         // theOutside = currNum;
+         // counter2 = 1;
+        //}
         freqNum = (freqNum / 2);
         System.out.println(freqNum);
         currNumTotal = currNumTotal + currNum;
+        System.out.println("The Outside... " + theOutside);
         theOutside = theOutside * currNum;
+        
         
         
       }
@@ -110,7 +119,7 @@ public class SqRootSimplifier {
        
     }
     
-    System.out.println("theOutside: " + theOutside);
+    System.out.println("theOutside: " + theOutside); //SUCESS!!!!
     
     
     
