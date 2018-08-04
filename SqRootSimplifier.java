@@ -12,6 +12,7 @@ public class SqRootSimplifier {
 
     System.out.println("Enter Square Root Number : ");
     int userNum = CONSOLE.nextInt();
+    int origUserNum = userNum;
 
     
     int dividerResult = 10;
@@ -90,10 +91,9 @@ public class SqRootSimplifier {
 
     int currNum = 0;
     int freqNum = 0;
-    int counter2 = 0;
     int currNumTotal = 0;
     int theOutside = 1;
-    //int theInside = 1;
+
     
     for (int i = 0; i < icounter; i++) {
       
@@ -102,10 +102,7 @@ public class SqRootSimplifier {
       System.out.println("currNum: " + currNum + " " + "freqNum: " + freqNum);
         
       if(freqNum > 1) {
-        //if(counter2 == 0) {
-         // theOutside = currNum;
-         // counter2 = 1;
-        //}
+        
         freqNum = (freqNum / 2);
         System.out.println(freqNum);
         currNumTotal = currNumTotal + currNum;
@@ -119,7 +116,15 @@ public class SqRootSimplifier {
        
     }
     
-    System.out.println("theOutside: " + theOutside); //SUCESS!!!!
+    
+    System.out.println("theFinalOutside: " + theOutside); //SUCESS!!!!
+    
+    int theInside = origUserNum / (theOutside * theOutside);
+    System.out.println("origUserNum: "  + origUserNum);
+    System.out.println("theInside: " + theInside);
+    
+    System.out.println("\n\n");
+    System.out.println(theOutside + " root " + theInside);
     
     
     
