@@ -188,9 +188,6 @@ public class Calculations {
       double bUser = CONSOLE.nextDouble();
       double cUser = CONSOLE.nextDouble();
       
-      //System.out.println("aUser: " + aUser);
-      //System.out.println("bUser: " + bUser);
-      //System.out.println("cUser: " + cUser);
       
       double firstAns = 1;
       double secondAns = 1; 
@@ -223,8 +220,10 @@ public class Calculations {
     
   }
   
+  //=========================================CMPLX NUM CONV======================================
+  
   public static void CmplxNumConv(){
-        System.out.println("Enter a and b (a + bi)");
+    System.out.println("Enter a and b (a + bi)");
     double a = CONSOLE.nextDouble();
     double b = CONSOLE.nextDouble();
     
